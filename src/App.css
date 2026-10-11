@@ -1,0 +1,1051 @@
+/* =========================================
+   GDGREC — CINEMATIC WEBSITE LAUNCH
+   Full App.css
+========================================= */
+
+.launch-page {
+  --gdg-blue: #4285f4;
+  --gdg-red: #ea4335;
+  --gdg-yellow: #fbbc05;
+  --gdg-green: #34a853;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #f7f8fc;
+  background: #070a10;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.launch-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   BACKGROUND EFFECTS
+========================================= */
+
+.background-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: linear-gradient(to bottom, #000, #0009 75%, transparent);
+}
+
+.background-glow {
+  position: absolute;
+  z-index: -4;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(115px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.glow-blue {
+  top: 8%;
+  left: 20%;
+  background: var(--gdg-blue);
+}
+
+.glow-green {
+  right: 3%;
+  bottom: 0;
+  background: var(--gdg-green);
+}
+
+.glow-red {
+  top: 25%;
+  right: 20%;
+  background: var(--gdg-red);
+  opacity: 0.09;
+}
+
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--gdg-green);
+  box-shadow: 0 0 12px #34a853aa;
+}
+
+/* =========================================
+   WELCOME PAGE HEADER
+========================================= */
+
+.topbar {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: min(1600px, 100%);
+  margin: 0 auto;
+  padding: 22px clamp(22px, 5vw, 70px);
+}
+
+.brand-logo {
+  display: block;
+  width: 100px;
+  height: 68px;
+  object-fit: contain;
+}
+
+.event-label {
+  color: #c0cad8;
+  text-align: right;
+  font-size: 9px;
+  line-height: 1.9;
+  letter-spacing: 2px;
+}
+
+.event-label .live-dot {
+  margin-right: 8px;
+}
+
+/* =========================================
+   WELCOME HERO LAYOUT
+========================================= */
+
+.hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.83fr 1.17fr;
+  align-items: center;
+  gap: 15px;
+
+  width: min(1600px, 100%);
+  min-height: 530px;
+  margin: 0 auto;
+  padding: 10px clamp(22px, 6.5vw, 95px) 40px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 3;
+  padding: 20px 0;
+}
+
+.eyebrow {
+  margin: 0 0 23px;
+  color: #a7b4c8;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(54px, 6.4vw, 92px);
+  font-weight: 900;
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+}
+
+.google-gradient {
+  background: linear-gradient(
+    105deg,
+    #4285f4 0%,
+    #34a853 34%,
+    #fbbc05 68%,
+    #ea4335 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  margin: 23px 0 26px;
+  color: #c2cbd9;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   LAUNCH BUTTON
+========================================= */
+
+.launch-button {
+  width: min(270px, 100%);
+  min-height: 47px;
+  padding: 5px 8px 5px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border: 1px solid transparent;
+  border-radius: 30px;
+
+  background:
+    linear-gradient(#080c13, #080c13) padding-box,
+    linear-gradient(
+      100deg,
+      #4285f4,
+      #34a853,
+      #fbbc05,
+      #ea4335
+    ) border-box;
+
+  color: #f8faff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.launch-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px #4285f433;
+}
+
+.launch-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.launch-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 5px;
+}
+
+.launch-arrow {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid var(--gdg-green);
+  border-radius: 50%;
+  font-size: 18px;
+  transition: background 0.2s ease;
+}
+
+.launch-button:hover .launch-arrow {
+  background: #34a85322;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  color: #758398;
+  font-size: 8px;
+  letter-spacing: 1.8px;
+}
+
+.meta-separator {
+  color: var(--gdg-yellow);
+}
+
+/* =========================================
+   FUTURISTIC MASCOT ENVIRONMENT
+========================================= */
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  min-width: 0;
+  height: clamp(430px, 48vw, 630px);
+  overflow: hidden;
+
+  border: 1px solid #ffffff0a;
+
+  background: radial-gradient(
+    ellipse at 52% 42%,
+    #18263a 0%,
+    #0b101a 46%,
+    #070a10 78%
+  );
+}
+
+.visual-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(#ffffff0b 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff0b 1px, transparent 1px);
+
+  background-size: 35px 35px;
+
+  transform: perspective(500px) rotateX(4deg);
+
+  mask-image: linear-gradient(transparent, #000 30%, #000);
+}
+
+.neon-frame {
+  position: absolute;
+  z-index: 1;
+
+  top: 10%;
+  left: 22%;
+
+  width: 57%;
+  height: 67%;
+
+  border: 2px solid var(--gdg-blue);
+  border-radius: 9px;
+
+  transform: perspective(700px) rotateY(-7deg) rotateZ(-1deg);
+
+  box-shadow:
+    0 0 20px #4285f444,
+    inset 0 0 20px #4285f411;
+
+  opacity: 0.8;
+}
+
+.frame-blue {
+  border-color: var(--gdg-blue);
+}
+
+.frame-color {
+  top: 7%;
+  left: 28%;
+  width: 53%;
+  height: 65%;
+
+  border-color: var(--gdg-green);
+  border-top-color: var(--gdg-red);
+  border-left-color: var(--gdg-yellow);
+
+  transform: perspective(700px) rotateY(8deg) rotateZ(2deg);
+
+  box-shadow: 0 0 24px #34a85333;
+}
+
+.floating-panel {
+  position: absolute;
+  z-index: 2;
+
+  width: 105px;
+  padding: 14px 11px;
+
+  border: 1px solid #a6c5ef30;
+
+  background: #101b2bd9;
+  box-shadow: 0 12px 35px #0005;
+  backdrop-filter: blur(12px);
+}
+
+.floating-panel span {
+  display: block;
+  margin-bottom: 15px;
+
+  color: #8298b5;
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+.floating-panel strong {
+  color: #e3eaf5;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.panel-left {
+  top: 22%;
+  left: 3%;
+  transform: rotate(-5deg);
+}
+
+.panel-right {
+  top: 35%;
+  right: 3%;
+  transform: rotate(4deg);
+}
+
+/* Platform */
+
+.mascot-platform {
+  position: absolute;
+  z-index: 2;
+  bottom: 2%;
+  left: 13%;
+
+  width: 74%;
+  height: 30px;
+
+  perspective: 300px;
+}
+
+.platform-top {
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid #dce8ff55;
+
+  background: linear-gradient(90deg, #151c28, #68768b, #1b2330);
+
+  transform: rotateX(15deg);
+
+  box-shadow: 0 -4px 25px #4285f444;
+}
+
+.platform-side {
+  position: absolute;
+  top: 13px;
+  right: 0;
+  left: 0;
+
+  height: 22px;
+
+  border-bottom: 1px solid #ffffff25;
+
+  background: linear-gradient(#18212d, #07090d);
+}
+
+/* Main mascot */
+
+.hero-cat {
+  position: relative;
+  z-index: 3;
+
+  display: block;
+  width: 82%;
+  height: 92%;
+
+  object-fit: contain;
+  object-position: center bottom;
+
+  filter: drop-shadow(0 12px 30px #000c);
+
+  animation: cat-float 4s ease-in-out infinite;
+}
+
+.mascot-tag {
+  position: absolute;
+  z-index: 4;
+  bottom: 8%;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 13px;
+
+  white-space: nowrap;
+
+  border: 1px solid #ffffff22;
+  background: #0a101bea;
+
+  color: #d7e0ee;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+
+  transform: translateX(-50%);
+}
+
+.visual-caption {
+  position: absolute;
+  z-index: 4;
+  top: 12px;
+  right: 12px;
+
+  color: #8492a8;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+}
+
+.visual-caption span {
+  color: var(--gdg-yellow);
+}
+
+/* =========================================
+   WELCOME PAGE FOOTER
+========================================= */
+
+.bottom-bar {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  width: min(1600px, 100%);
+  margin: 0 auto;
+  padding: 16px clamp(22px, 5vw, 70px);
+
+  border-top: 1px solid #ffffff15;
+
+  color: #8290a4;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.footer-year {
+  margin-left: auto;
+}
+
+/* =========================================
+   FULL-SCREEN COUNTDOWN (5 → 1)
+========================================= */
+
+.phase-countdown {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  overflow: hidden;
+}
+
+.countdown-stage {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 22px clamp(20px, 5vw, 76px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 72% 50%, #14253b 0%, transparent 52%),
+    #070a10;
+
+  animation: stage-enter 0.5s ease both;
+}
+
+/* Countdown header */
+
+.countdown-topbar {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: min(1400px, 100%);
+  margin: 0 auto;
+}
+
+.countdown-logo {
+  width: 90px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.sequence-label,
+.launch-status {
+  color: #aebbd0;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.launch-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+/* Two separate columns: number on the left, cat on the right */
+
+.countdown-content {
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+
+  gap: clamp(20px, 5vw, 75px);
+
+  width: min(1250px, 100%);
+  min-height: 0;
+  margin: 0 auto;
+}
+
+.countdown-copy {
+  position: relative;
+  z-index: 2;
+}
+
+/* Big Google-coloured number */
+
+.count-number {
+  display: block;
+
+  font-size: clamp(130px, 21vw, 270px);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+
+  background: linear-gradient(
+    115deg,
+    #4285f4 5%,
+    #34a853 38%,
+    #fbbc05 68%,
+    #ea4335 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  filter: drop-shadow(0 0 28px #4285f440);
+
+  animation: number-pop 0.45s ease both;
+}
+
+/* One-line tagline under the number */
+
+.count-tagline {
+  min-height: 2.6em;
+  max-width: 420px;
+  margin: 22px 0 0;
+
+  color: #e8eefb;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+
+  animation: tag-in 0.45s ease both;
+}
+
+/* Countdown progress */
+
+.progress-track {
+  width: min(320px, 100%);
+  height: 3px;
+  margin-top: 24px;
+
+  overflow: hidden;
+
+  background: #ffffff18;
+}
+
+.progress-bar {
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #4285f4,
+    #34a853,
+    #fbbc05,
+    #ea4335
+  );
+
+  transition: width 0.15s linear;
+}
+
+.progress-label {
+  margin-top: 13px;
+
+  color: #8292a8;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   COUNTDOWN MASCOT AREA (cat only)
+========================================= */
+
+.countdown-visual {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  min-width: 0;
+  height: min(66vh, 650px);
+  min-height: 320px;
+}
+
+.mascot-light {
+  position: absolute;
+  z-index: -1;
+  top: 15%;
+  left: 50%;
+
+  width: 65%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background: #4285f4;
+  opacity: 0.13;
+  filter: blur(75px);
+
+  transform: translateX(-50%);
+}
+
+/* Decorative rings behind the cat */
+
+.orbit {
+  position: absolute;
+  z-index: -1;
+  top: 48%;
+  left: 50%;
+
+  width: min(95%, 510px);
+  aspect-ratio: 1;
+
+  border: 1px solid #4285f43d;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  animation: orbit-spin 30s linear infinite;
+}
+
+.orbit-middle {
+  width: min(78%, 415px);
+
+  border-color: #34a85342;
+  border-style: dashed;
+
+  animation-direction: reverse;
+  animation-duration: 35s;
+}
+
+.orbit-inner {
+  width: min(60%, 315px);
+
+  border-color: #fbbc0538;
+
+  animation-duration: 24s;
+}
+
+.countdown-cat {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: min(78%, 390px);
+  height: 86%;
+
+  object-fit: contain;
+  object-position: center bottom;
+
+  filter: drop-shadow(0 18px 28px #000b);
+
+  animation: cat-float 4s ease-in-out infinite;
+}
+
+/* =========================================
+   COUNTDOWN FOOTER
+========================================= */
+
+.countdown-bottom {
+  position: relative;
+  z-index: 6;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  padding-top: 16px;
+
+  border-top: 1px solid #ffffff17;
+
+  color: #8390a4;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes cat-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+@keyframes stage-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes number-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tag-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes orbit-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    padding-inline: 24px;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 7.5vw, 68px);
+  }
+
+  .hero-visual {
+    height: 450px;
+  }
+
+  .floating-panel {
+    width: 85px;
+  }
+
+  .countdown-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .countdown-visual {
+    height: 54vh;
+  }
+
+  .count-number {
+    font-size: clamp(110px, 20vw, 180px);
+  }
+
+  .count-tagline {
+    font-size: clamp(18px, 3vw, 24px);
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+  .topbar {
+    padding: 13px 18px;
+  }
+
+  .brand-logo {
+    width: 82px;
+    height: 56px;
+  }
+
+  .event-label {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    padding: 26px 22px 20px;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.7px;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 13vw, 76px);
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .launch-button {
+    margin: 0 auto;
+  }
+
+  .hero-meta {
+    justify-content: center;
+    font-size: 7px;
+  }
+
+  .hero-visual {
+    height: 380px;
+    margin-top: 15px;
+  }
+
+  .hero-cat {
+    width: 86%;
+  }
+
+  .floating-panel {
+    width: 80px;
+    padding: 10px 7px;
+  }
+
+  .floating-panel strong {
+    font-size: 11px;
+  }
+
+  .panel-left {
+    top: 15%;
+  }
+
+  .panel-right {
+    top: 28%;
+  }
+
+  .bottom-bar {
+    justify-content: center;
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    font-size: 7px;
+  }
+
+  .footer-year {
+    display: none;
+  }
+
+  /* Countdown mobile */
+
+  .countdown-stage {
+    padding: 14px 18px;
+  }
+
+  .countdown-logo {
+    width: 65px;
+    height: 46px;
+  }
+
+  .sequence-label,
+  .launch-status {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  /* Number + tagline on top, cat below */
+
+  .countdown-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0;
+
+    padding-top: 15px;
+  }
+
+  .countdown-copy {
+    text-align: center;
+  }
+
+  .count-number {
+    font-size: clamp(100px, 30vw, 160px);
+  }
+
+  .count-tagline {
+    min-height: 2.6em;
+    margin: 12px auto 0;
+    font-size: 18px;
+  }
+
+  .progress-track {
+    margin: 14px auto 0;
+  }
+
+  .progress-label {
+    font-size: 7px;
+  }
+
+  .countdown-visual {
+    height: min(40vh, 340px);
+    min-height: 200px;
+  }
+
+  .countdown-cat {
+    width: min(70%, 260px);
+    height: 84%;
+  }
+
+  .countdown-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    text-align: center;
+    font-size: 7px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cat,
+  .countdown-cat,
+  .orbit,
+  .count-number,
+  .count-tagline {
+    animation: none;
+  }
+
+  .launch-button {
+    transition: none;
+  }
+}
